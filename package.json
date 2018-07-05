@@ -1,0 +1,21 @@
+{
+  "name": "html-to-img",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vadim Liakhovich <v.liakhovich@yandex.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-logger": "^3.2.0",
+    "koa-route": "^3.2.0",
+    "koa-static": "^5.0.0",
+    "npm": "^6.1.0",
+    "puppeteer": "^1.5.0",
+    "sha256": "^0.2.0"
+  }
+}
