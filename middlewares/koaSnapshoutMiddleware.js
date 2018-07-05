@@ -3,7 +3,9 @@ const route = require('koa-route');
 
 const screenshotPage = require('../lib/screenshot');
 const getPath = require('../lib/path');
-const {fileExists, readFile} = require('../lib/fs');
+const {fsExists, fsReadFile, fsMkdir} = require('../lib/fs');
+
+const CACHE_PATH = path.join(__dirname, '../cache');
 
 module.exports = function createSnapshotRoute() {
     return route.get('/snapshot', async (ctx) => {
@@ -14,9 +16,13 @@ module.exports = function createSnapshotRoute() {
             let image;
             let imagePath = getPath(url);
 
-            if (!force && await fileExists(imagePath)) {
-                image = await readFile(imagePath);
+            if (!force && await fsExists(imagePath)) {
+                image = await fsReadFile(imagePath);
             } else {
+                if (!await fsExists(CACHE_PATH)) {
+                    await fsMkdir(CACHE_PATH);
+                }
+
                 image = await screenshotPage({
                     url,
                     quality,
