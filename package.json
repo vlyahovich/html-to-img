@@ -13,6 +13,7 @@
   "author": "Vadim Liakhovich <v.liakhovich@yandex.ru>",
   "license": "MIT",
   "dependencies": {
+    "azure-storage": "^2.10.0",
     "koa": "^2.5.1",
     "koa-body": "^4.0.4",
     "koa-logger": "^3.2.0",
@@ -24,6 +25,7 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "dotenv": "^6.0.0",
     "request": "^2.87.0",
     "tape": "^4.9.1",
     "tape-async": "^2.3.0"

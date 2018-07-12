@@ -75,3 +75,5 @@ typings/
 # Cache
 cache/*
 
+# Env
+.env
